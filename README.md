@@ -9,5 +9,10 @@
 ### Project in Development!
 > Please note that Kloth is still in development, and is not released yet. This means it's very unstable and incomplete.
 
+--- 
+
+### Important Information to note!
+> This repository contains both the frontend **and** backend of the Kloth project. You can find the source code for each at ``/backend/src`` or ``/frontend/src``. Seperate READMEs are located in the ``/backend`` and ``/frontend``.
+
 Much love,
 Patryk Karwasinski
