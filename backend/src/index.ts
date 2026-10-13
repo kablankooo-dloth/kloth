@@ -8,6 +8,3 @@ import "dotenv/config";
 /* -------------------------------------------------------------------------- */
 
 console.log("Hello World");
-
-// quick check
-console.log(process.env.PORT);
