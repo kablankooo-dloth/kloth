@@ -4,21 +4,24 @@
 
 // config dotenv: process.env[$envVar]
 import "dotenv/config";
-import express from "express";
+// import the express API
+import { api } from "./network/express/express.index.js";
 
 /* -------------------------------------------------------------------------- */
 
-const app = express();
-app.use(express.json());
+const { app, registerRoute, runApi } = api();
 
-app.get("/", (_req, res) => {
-	res.status(200).json({
-		message: "Hello World",
-	});
+registerRoute({
+	method: "get",
+	endpoint: "/",
+	handler: (_req, res) => {
+		res.send("Hello World!");
+	},
 });
 
-const PORT = Number(process.env.PORT);
-
-app.listen(PORT, () => {
-	console.log(`Server running at http://localhost:${PORT}`);
-});
+const apiSuccess = runApi(Number(process.env.PORT));
+if (apiSuccess) {
+	console.log("API is running!");
+} else {
+	console.log("API is not running!");
+}
