@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import dotenv from "dotenv";
 
 describe("Env variables", () => {
-	it("loads PORT from .env", () => {
+	it("PORT in .env", () => {
 		dotenv.config();
 
 		expect(process.env.PORT).toBeDefined();
